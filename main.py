@@ -65,9 +65,71 @@ print(soup.find('p').get_text())
 
 #get all the links on the page
 # anchors = soup.find_all('a')
+# all_links = set()
+# for link in anchors:
+# 	if(link != '#'):
+# 		link = 'https://codewithharry.com'+link.get('href')
+# 		all_links.add(link)
+# 		print(link)
+
+
+#get all the links on the page
+anchors = soup.find_all('a')
 all_links = set()
 for link in anchors:
-	if(link != '#'):
-		link = 'https://codewithharry.com'+link.get('href')
+	if(link.get('href') != '#'):
+		linkText = 'https://codewithharry.com'+link.get('href')
 		all_links.add(link)
-		print(link)
+		# print(linkText)
+
+
+
+#comments
+# markub = '<p><! -- this a comment -- ></p>'
+# soup2 = BeautifulSoup(markub)
+# print(soup2.p)
+# print(soup2.p.string)
+# print(type(soup2.p.string))
+
+
+
+__next = soup.find(id='__next')
+# print(__next)
+# print(__next.children)
+# print(__next.contents)
+# for elem in __next.contents:
+# 	print(elem)
+
+# for elem in __next.children:
+# 	print(elem)
+
+
+
+
+# for item in __next.strings:
+# 	print(item)
+
+
+
+# for item in __next.stripped_strings:
+# 	print(item)
+
+
+# print(__next.parent)
+# print(__next.parents)
+
+
+# for item in __next.parents:
+	# print(item)
+	# print(item.name)
+
+
+
+
+
+# print(__next.next_sibling)
+# print(__next.previous_sibling)
+
+
+elem = soup.select('footer')
+print(elem)
